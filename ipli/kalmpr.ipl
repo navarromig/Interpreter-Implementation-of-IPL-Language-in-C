@@ -1,0 +1,221 @@
+count = 0
+count2 = 0
+MINNUM = 100
+MAXNUM = 100000
+MAXK = 4
+COMPUTATIONS = 20
+n = MINNUM
+k=0
+d=5
+temp=n
+while n <= MAXNUM
+
+	cond1 = 0
+	cond2 = temp % 2
+	if cond2 == 0
+		if k<= MAXK
+			cond1 = 1
+	while cond1 == 1
+		
+		k = k + 1
+		temp = temp/2
+
+		cond1 = 0
+		cond2 = temp % 2
+		if cond2 == 0
+			if k<= MAXK
+				cond1 = 1
+		
+
+
+	cond1 = 0
+	cond2 = temp % 3
+	if cond2 == 0
+		if k<= MAXK
+			cond1 = 1
+	while cond1 == 1
+		
+		k = k + 1
+		temp = temp/3
+
+		cond1 = 0
+		cond2 = temp % 3
+		if cond2 == 0
+			if k<= MAXK
+				cond1 = 1
+		
+
+
+	cond1 = 0 
+	if temp != 1
+		if k<= MAXK
+			cond2 = d*d
+			if cond2 <= n
+				cond1 = 1
+	while cond1 == 1
+
+		cond3 = 0
+		cond2 = temp % d
+		if cond2 == 0
+			if k<= MAXK
+				cond3 = 1
+		while cond3 == 1
+			
+			k = k + 1
+			temp = temp/d
+			factor2 = d
+
+			cond3 = 0
+			cond2 = temp % d
+			if cond2 == 0
+				if k <= MAXK
+					cond3 = 1
+
+
+		cond3 = 0
+		d2 = d + 2
+		cond2 = temp % d2
+		if cond2 == 0
+			if k<= MAXK
+				cond3 = 1
+		while cond3 == 1
+			
+			k = k + 1
+			temp = temp/d2
+			factor2 = d2
+
+			cond3 = 0
+			cond2 = temp % d2
+			if cond2 == 0
+				if k<= MAXK
+					cond3 = 1
+
+		d = d + 6
+		cond1 = 0 
+		if temp != 1
+			if k<= MAXK
+				cond2 = d*d
+				if cond2 <= n
+					cond1 = 1
+
+
+	if temp != 1
+		if k <= MAXK
+			factor2 = temp
+			k = k + 1
+	if k <= MAXK
+		if k >= 2
+			count = count + 1
+			if k == 2
+				count2 = count2 + 1
+				factor1 = n / factor2
+				if factor1 != factor2
+					fac = factor2 - factor1
+					fac = fac * 100
+					if fac <= factor2
+						writeln n 
+	n = n + 1
+	k=0
+	d=5
+	temp=n
+
+
+write count
+writeln count2 
+k=0
+d=5
+i = 1
+while i <= COMPUTATIONS
+	random y
+	random z
+	x1 = y % 32768
+	x1 = x1 + 1
+	x2 = z % 32768
+	x2 = x2 + 1
+	x = x1 * x2 
+	x = x + 1
+	temp = x
+
+	cond1 = 0
+	cond2 = temp % 2
+	if cond2 == 0
+		cond1 = 1
+	while cond1 == 1
+		
+		k = k + 1
+		temp = temp/2
+
+		cond1 = 0
+		cond2 = temp % 2
+		if cond2 == 0
+			cond1 = 1
+
+	cond1 = 0
+	cond2 = temp % 3
+	if cond2 == 0
+		cond1 = 1
+	while cond1 == 1
+		
+		k = k + 1
+		temp = temp/3
+
+		cond1 = 0
+		cond2 = temp % 3
+		if cond2 == 0
+			cond1 = 1
+		
+
+
+	cond1 = 0 
+	if temp != 1
+		cond2 = d*d
+		if cond2 <= n
+			cond1 = 1
+	while cond1 == 1
+
+		cond3 = 0
+		cond2 = temp % d
+		if cond2 == 0
+			cond3 = 1
+		while cond3 == 1
+			
+			k = k + 1
+			temp = temp/d
+			factor2 = d
+
+			cond3 = 0
+			cond2 = temp % d
+			if cond2 == 0
+				cond3 = 1
+
+
+		cond3 = 0
+		d2 = d + 2
+		cond2 = temp % d2
+		if cond2 == 0
+			cond3 = 1
+		while cond3 == 1
+			
+			k = k + 1
+			temp = temp/d2
+			factor2 = d2
+
+			cond3 = 0
+			cond2 = temp % d2
+			if cond2 == 0
+				cond3 = 1
+
+		d = d + 6
+		cond1 = 0 
+		if temp != 1
+			cond2 = d*d
+			if cond2 <= n
+				cond1 = 1
+
+	if temp != 1
+		k = k + 1
+	write x
+	writeln k
+	i = i + 1
+	k=0
+	d=5
